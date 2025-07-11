@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>lesson 02</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+  <body>
+  <form action="#" method="post">
+    <h2>Регистрация</h2>
+
+    <label for="fullname">Имя:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Введите имя" required>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" id="phone" name="phone" placeholder="+49 ___ ___ __ __" required>
+
+    <label for="email">Электронная почта:</label>
+    <input type="email" id="email" name="email" placeholder="Введите email" required>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" placeholder="*****" required>
+
+    <label for="birthdate">Дата рождения:</label>
+    <input type="text" id="birthdate" name="birthdate" placeholder="дд.мм.гггг" onfocus="(this.type='date')"
+           onblur="if(!this.value)this.type='text'" required>
+
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" name="agree" required>
+        &nbsp; Я принимаю &nbsp; <a href="#"> условия соглашения</a>
+      </label>
+    </div>
+
+    <button type="submit">Зарегистрироваться</button>
+  </form>
+
+  </body>
+</html>
