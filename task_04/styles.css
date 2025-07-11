@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.list {
+    font-weight: 300;
+    border-style: solid;
+    border-color: aqua;
+    list-style: none;
+    margin: 0 20px 20px;
+    font-size: 24px;
+    padding: 30px;
+}
+
+.center {
+    text-align: center;
+}
+
+header {
+    color: whitesmoke;
+    height: 400px;
+    background-image: url("./img/new-ai-photo.png");
+    background-size: cover; /* Важно для масштабирования */
+    background-position: center; /* Смещение фокуса вниз */
+    background-repeat: no-repeat; /* Предотвращаем повторение */
+    margin: 0 0 20px 0;
+}
+
+h1 {
+    padding-top: 170px;
+    font-size: 55px;
+}
+
+.list>p {
+    margin: 20px 0;
+}
