@@ -10,7 +10,7 @@ body {
 
 .head {
     text-align: center;
-    padding: 60px 20px 40px;
+    padding: 10px 20px 40px;
     background-color: #eee0d5;
     position: fixed;
     top: 0;
@@ -38,7 +38,7 @@ body {
 .head h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
-    font-size: 80px;
+    font-size: 60px;
     letter-spacing: 0.05em;
     color: rgba(82, 58, 45, 0.7);
     margin: 0;
@@ -60,13 +60,14 @@ h1 {
 
 footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-bottom: 80px;
     font-size: 0.9em;
     color: #d3c1b2;
 }
 
 .step-1 {
-    margin-top: 255px;
+    margin-top: 155px;
 }
 
 .step-1 .step-text {
@@ -78,6 +79,7 @@ footer {
 }
 
 .step-4 .step-text h2 {
+    padding-top: 150px;
    text-align: center;
 }
 
@@ -95,14 +97,10 @@ footer {
 }
 
 .step-content {
-    position: sticky;
+    position: relative;
     top: 20%;
     left: 0;
-    right: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 40px 60px;
     background: rgba(255, 255, 255, 0.85);
     z-index: 1;
@@ -110,21 +108,35 @@ footer {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(6px);
     box-sizing: border-box;
+    height: 500px;
+    overflow: hidden;
 }
 
 .step-text {
-    flex: 1;
-    padding-right: 30px;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
     text-align: right;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .step-image {
-    flex: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
     text-align: right;
+    box-sizing: border-box;
+    padding: 30px;
 }
 
 .step-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
