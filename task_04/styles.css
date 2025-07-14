@@ -28,7 +28,7 @@ body {
 header {
     color: whitesmoke;
     height: 400px;
-    background-image: url("./img/new-ai-photo.png");
+    background-image: url("./img/header.jpeg");
     background-size: cover; /* Важно для масштабирования */
     background-position: center; /* Смещение фокуса вниз */
     background-repeat: no-repeat; /* Предотвращаем повторение */
@@ -36,10 +36,13 @@ header {
 }
 
 h1 {
-    padding-top: 170px;
+    font-family: 'Emilys Candy', serif;
+    padding: 170px 0 0 30px;
     font-size: 55px;
+    text-align: left;
 }
 
 .list>p {
+    font-family: 'Delius Swash Caps', cursive;
     margin: 20px 0;
 }
