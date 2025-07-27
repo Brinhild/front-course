@@ -1,16 +1,13 @@
 const persons = [];
 const addPerson = document.getElementById('add-person');
-const deletePerson = document.getElementById('delete-person');
 const list = document.getElementById('persons-list');
 const totalPerson = document.getElementById('total-persons');
 
 addPerson.onclick = function () {
-
     const personId = document.getElementById('person-id').value;
     const firstName = document.getElementById('first-name').value;
     const lastName = document.getElementById('last-name').value;
     const age = document.getElementById('age').value;
-
 
     if (!personId || !firstName || !lastName || !age) {
         alert('Please complete all fields.');
@@ -29,21 +26,31 @@ addPerson.onclick = function () {
     document.getElementById('first-name').value = '';
     document.getElementById('last-name').value = '';
     document.getElementById('age').value = '';
-
 }
 
-deletePerson.onclick = function () {
-    const personId = document.getElementById('delete-person-id').value;
-    const findResult = findPersonById(persons, personId);
+function createButtonDel(id) {
+    const buttonDel = document.createElement('button');
+    buttonDel.append('X');
+    buttonDel.style.color = 'red';
+    buttonDel.style.marginLeft = '5px';
+
+    buttonDel.addEventListener('click', () => {
+        deletePerson(id);
+    });
+
+    return buttonDel;
+}
+
+function deletePerson(id) {
+    const findResult = findPersonById(persons, id);
 
     if (findResult >= 0) {
         persons.splice(findResult, 1);
+        renderPerson(persons);
     } else {
-        alert('No such person was found.')
+        alert('No such person was found.');
     }
-    renderPerson(persons);
 }
-
 
 function findPersonById(arr, id) {
     id = String(id);
@@ -52,6 +59,7 @@ function findPersonById(arr, id) {
             return i;
         }
     }
+
     return -1;
 }
 
@@ -71,7 +79,9 @@ function renderPerson(persons) {
     persons.forEach(person => {
         const li = document.createElement('li');
         li.textContent = `${person.id} — ${person.firstName}, ${person.lastName}, age: ${person.age}`;
+        li.appendChild(createButtonDel(person.id));
         list.appendChild(li);
+
     })
 
     totalPerson.textContent = 'Total persons: ' + persons.length;
