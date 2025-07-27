@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.library-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.actions-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.actions-button:hover {
+    background-color: #0056b3;
+}
+
+.book-list {
+    list-style: none; /* убираем стандартные маркеры */
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+.book-list li {
+    background: #f7f9fc;
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.4;
+    transition: background-color 0.3s ease;
+    cursor: default;
+}
+
+.book-list li:hover {
+    background: #e1e9f8;
+}
