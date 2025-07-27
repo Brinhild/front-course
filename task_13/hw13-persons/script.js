@@ -1,10 +1,6 @@
 const persons = [];
 
 addPerson.onclick = function () {
-    //TODO Person must be unique. add person to list with ButtonDel.
-    // If person added, total will be increment
-    // If person removed, total will be decrement
-    // functionality with remove is optional
     const person = new Person(personId.value.trim(),
         firstName.value.trim(),
         lastName.value.trim(),
@@ -28,8 +24,34 @@ addPerson.onclick = function () {
 }
 
 function showStats() {
-    // TODO Homework: if persons not empty, show in <div id="stats"> after <h2>
-    // Total persons, max age, min age, average age
+
+    const stats = document.getElementById('stats');
+
+    if (persons.length === 0) {
+        while (stats.children.length > 1) {
+            stats.removeChild(stats.lastChild);
+        }
+        return;
+    }
+
+    const totalPersons = persons.length;
+    const ages = persons.map(p => p.age);
+    const maxAge = Math.max(...ages);
+    const minAge = Math.min(...ages);
+    const averageAge = (ages.reduce((sum, age) => sum + age, 0) / totalPersons).toFixed(2);
+
+    const statsHtml = `
+        <p>Total persons: ${totalPersons}</p>
+        <p>Max age: ${maxAge}</p>
+        <p>Min age: ${minAge}</p>
+        <p>Average age: ${averageAge}</p>
+    `;
+
+    while (stats.children.length > 1) {
+        stats.removeChild(stats.lastChild);
+    }
+
+    stats.insertAdjacentHTML('beforeend', statsHtml);
 }
 
 
