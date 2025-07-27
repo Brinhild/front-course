@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода</title>
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="weather-box">
+    <h1>Текущая погода</h1>
+    <h1 id="city-name"></h1>
+
+    <p>Температура: <span id="temp"></span> °C</p>
+    <p>Давление: <span id="pressure"></span> гПа</p>
+    <p>Влажность: <span id="humidity"></span> %</p>
+
+    <input type="text" id="city-input" placeholder="Введите город">
+
+    <button onclick="getWeather()">Показать погоду</button>
+</div>
+</body>
+</html>
