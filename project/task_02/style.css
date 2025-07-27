@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 2em;
+}
+.joke {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* по вертикали */
+    align-items: center;     /* по горизонтали */
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
