@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="utils.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div>
+    <label> ID:
+        <input id="person-id" type="text">
+    </label>
+    <label> First Name:
+        <input id="first-name" type="text">
+    </label>
+    <label> Last Name:
+        <input id="last-name" type="text">
+    </label>
+    <label> Age:
+        <input id="age" type="number" min="0">
+    </label>
+</div>
+<button id="add-person">Add new person</button>
+<div>
+<div>
+    <label> ID Person to delete:
+        <input id="delete-person-id" type="text">
+    </label>
+    <button id="delete-person">Delete person by id</button>
+</div>
+    <h1>Persons: </h1>
+    <ol id="persons-list"></ol>
+</div>
+<h2 id="total-persons">Total persons: </h2>
+</body>
+</html>
