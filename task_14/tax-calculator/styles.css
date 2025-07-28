@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+}
+
+#taxForm {
+    flex: 1;
+    padding: 20px;
+}
+
+#taxForm input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#result-side {
+    flex: 1;
+    padding: 20px;
+}
