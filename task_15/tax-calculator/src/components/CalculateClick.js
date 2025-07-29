@@ -1,4 +1,4 @@
-import {calculateFederalTax} from "../utils/germanyTax.js";
+import {calculateGermanyTax} from "../utils/germanyTax.js";
 import {calculateBelgiumTax} from "../utils/belgiumTax.js";
 
 export function calculateClick() {
@@ -9,9 +9,11 @@ export function calculateClick() {
     let result;
 
     if (country === "Germany") {
-        //TODO
-        federalTax = calculateFederalTax(income);
-        result = income - federalTax;
+        const churchTaxRate = 0;
+        const {tax, solidarityTax, churchTax, totalTax} = calculateGermanyTax(income, churchTaxRate);
+        federalTax = totalTax;
+        result = income - totalTax;
+
     } else if (country === "Belgium") {
         const rate = data.findLast(v => v.name === country)
             .states
@@ -23,8 +25,8 @@ export function calculateClick() {
     }
 
 
-    const revenueEl = createInfoElement(`Revenue: ${result}`, "h3");
-    const taxEl = createInfoElement(`Tax: ${federalTax}`, 'h3');
+    const revenueEl = createInfoElement(`Revenue: ${result.toFixed(2)}`, "h3");
+    const taxEl = createInfoElement(`Tax: ${federalTax.toFixed(2)}`, 'h3');
     const infoBox = document.createElement("div");
     infoBox.append(revenueEl, taxEl);
     const boxResult = document.getElementById("result-side");
