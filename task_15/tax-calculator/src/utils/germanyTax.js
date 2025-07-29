@@ -1,5 +1,5 @@
-export function calculateGermanyTax(income, churchTaxRate = 0) {
-    let tax = 0;
+export function calculateGermanyTax(income, churchRate = 0) {
+    let tax;
 
     if (income <= 11784) {
         tax = 0;
@@ -13,13 +13,15 @@ export function calculateGermanyTax(income, churchTaxRate = 0) {
         tax = income * 0.45;
     }
 
-    const solidarityTax = tax * 0.055;
-    const churchTax = tax * churchTaxRate;
+    const solidarity = tax * 0.055;
+    const church = tax * churchRate;
+    const total = tax + solidarity + church;
 
     return {
         tax,
-        solidarityTax,
-        churchTax,
-        totalTax: tax + solidarityTax + churchTax
+        solidarity,
+        church,
+        total,
+        result: income - total,
     };
 }

@@ -5,28 +5,24 @@ export function calculateClick() {
     const income = +document.getElementById('income').value;
     const country = document.getElementById('country').value;
     const state = document.getElementById('state').value;
-    let federalTax;
-    let result;
 
-    if (country === "Germany") {
-        const churchTaxRate = 0;
-        const {tax, solidarityTax, churchTax, totalTax} = calculateGermanyTax(income, churchTaxRate);
-        federalTax = totalTax;
-        result = income - totalTax;
-
-    } else if (country === "Belgium") {
-        const rate = data.findLast(v => v.name === country)
-            .states
-            .find(value => value.state === state)
-            .tax;
-        const {tax, socialTax, municipalTax, totalTax} = calculateBelgiumTax(income, rate);
-        federalTax = totalTax;
-        result = income - totalTax;
+    let taxes;
+    switch (country) {
+        case "Germany":
+            taxes = calculateGermanyTax(income, 0);
+            break;
+        case "Belgium":
+            const rate = data.findLast(v => v.name === country)
+                .states
+                .find(value => value.state === state)
+                .tax;
+            taxes = calculateBelgiumTax(income, rate);
+            break;
+        default: taxes = {};
     }
 
-
-    const revenueEl = createInfoElement(`Revenue: ${result.toFixed(2)}`, "h3");
-    const taxEl = createInfoElement(`Tax: ${federalTax.toFixed(2)}`, 'h3');
+    const revenueEl = createInfoElement(`Revenue: ${taxes.result.toFixed(2)}`, "h3");
+    const taxEl = createInfoElement(`Tax: ${taxes.total.toFixed(2)}`, 'h3');
     const infoBox = document.createElement("div");
     infoBox.append(revenueEl, taxEl);
     const boxResult = document.getElementById("result-side");
